@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 61px; /* Adjusted to be below navbar */
+    width: 250px;
+    height: calc(100% - 50px);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+}
+
+#sidebar h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+#user-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#user-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Hamburger Menu Button */
+#menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 18px;
+    border: none;
+}
+
+/* Map styling */
+#map {
+    position: absolute;
+    top: 50px; /* Adjusted to be below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    z-index: 0;
+}
+
+/* Center Map Button */
+#center-map {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#center-map:hover {
+    background: #0056b3;
+}
+
+/* Responsive for smaller screens */
+@media screen and (min-width: 768px) {
+    #sidebar {
+        transform: translateX(0); /* Show sidebar by default on larger screens */
+    }
+
+    #menu-toggle {
+        display: none; /* Hide button on larger screens */
+    }
+
+    #map {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+#heading{
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    
+    padding-bottom: 10px;
+}
+
+#navbar{
+    background-color: rgb(35, 35, 35);
+    padding-bottom:1px;
+}

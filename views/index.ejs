@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Tracking App</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" /></head>
+
+<body>
+    <div id="navbar" >
+        <h2 id="heading" >
+            Realtime Location Tracker 🗺️               
+            </h2>
+    </div>
+    <!-- Sidebar for user list -->
+
+    <div id="sidebar" class="">
+        <h2 class="text-xl font-bold p-4">Active now</h2>
+        <ul id="user-list" class="p-4">
+            <!-- User list will be added dynamically -->
+        </ul>
+    </div>
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Center Map Button -->
+    <button id="center-map">Center on Me</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
