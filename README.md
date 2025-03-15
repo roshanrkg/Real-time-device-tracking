@@ -1,7 +1,7 @@
 Real-time Location Tracker (Socket.io project)
 https://real-time-device-tracking-jv9r.onrender.com/
 
-A web-based real-time location tracking application that displays the live locations of users on a map.
+A web-based real-time location tracking application that displays the live locations of users on a map (updates every 3 seconds).
 
 🚀 Features
 
@@ -9,7 +9,7 @@ A web-based real-time location tracking application that displays the live locat
 
 📝 User List Sidebar to show connected users
 
-🌍 Map Integration (Google Maps / Leaflet.js)
+🌍 Map Integration (Leaflet.js)
 
 
 🛠️ Tech Stack
