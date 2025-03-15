@@ -1,0 +1,22 @@
+Real-time Location Tracker
+
+A web-based real-time location tracking application that displays the live locations of users on a map.
+
+🚀 Features
+
+📍 Live Location Tracking using interactive maps
+
+📝 User List Sidebar to show connected users
+
+🌍 Map Integration (Google Maps / Leaflet.js)
+
+
+🛠️ Tech Stack
+
+Frontend: HTML(ejs), Tailwind CSS, JavaScript
+
+Backend: Node.js, Express.js 
+
+Real-time Communication: WebSockets (Socket.io) 
+
+Maps API:  Leaflet.js
