@@ -3,9 +3,9 @@ https://real-time-device-tracking-jv9r.onrender.com/
 
 A web-based real-time location tracking application that displays the live locations of users on a map (updates every 3 seconds).
 
-🚀 Features
+Features
 
-📍 Live Location Tracking using interactive maps
+🚩 Live Location Tracking using interactive maps
 
 📝 User List Sidebar to show connected users
 
