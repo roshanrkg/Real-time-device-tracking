@@ -56,11 +56,22 @@ socket.on("recieve-location", (data) => {
     }
 
     if (markers[id]) {
+        // Update marker position
         markers[id].setLatLng([latitude, longitude]);
+    
+        // Update popup content and reopen it
+        markers[id]
+            .bindPopup(`<b>${name}<br>Latitude = ${latitude}<br>Longitude = ${longitude}</b>`)
+            .openPopup();
     } else {
+        // Create new marker
         markers[id] = L.marker([latitude, longitude], { icon: userIcon }).addTo(map);
-        markers[id].bindPopup(`<b>${name}</b>`).openPopup();
-    }
+    
+        // Bind and open popup
+        markers[id]
+            .bindPopup(`<b>${name}<br>Latitude = ${latitude}<br>Longitude = ${longitude}</b>`)
+            .openPopup();
+    }    
 });
 
 // Remove disconnected users from the map and sidebar
@@ -78,13 +89,34 @@ socket.on("user-disconnected", (id) => {
 });
 
 // Add button to center the map on the user
-document.getElementById("center-map").addEventListener("click", () => {
+const centerButton = document.getElementById("center-map");
+
+centerButton.addEventListener("click", () => {
+    
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            map.setView([position.coords.latitude, position.coords.longitude], 16);
-        });
+        centerButton.textContent = "Loading...";
+        
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latlng = [position.coords.latitude, position.coords.longitude];
+
+                // Set map view only once
+                map.setView(latlng, 10);
+            },
+            (error) => {
+                console.error("Geolocation error:", error);
+                centerButton.textContent = "Center on Me";
+            },
+            {
+                enableHighAccuracy: false,
+                timeout: 5000,
+                maximumAge: 5000
+            }
+        );
     }
 });
+
+
 
 document.getElementById("menu-toggle").addEventListener("click", function () {
     document.getElementById("sidebar").classList.toggle("active");
